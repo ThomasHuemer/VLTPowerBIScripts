@@ -1,6 +1,5 @@
 USE [VLT_AX500105_P]
 GO
-
 /****** Object:  View [dbo].[VLT_DB_PowerBI_EmplTable]    Script Date: 29.05.2018 15:51:53 ******/
 SET ANSI_NULLS ON
 GO
