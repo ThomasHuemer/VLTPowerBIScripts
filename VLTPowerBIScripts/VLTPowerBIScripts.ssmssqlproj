@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="VLTPowerBIScripts">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="vmvalsql01:KLOTZNER\hut">
+          <Created>2019-01-31T16:03:33.4942704+01:00</Created>
+          <Type>SQL</Type>
+          <Server>vmvalsql01</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="CREATE_ VLT_DB_POWERBI_CUSTINVOICETRANSPART_ADDON.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_ VLT_DB_POWERBI_CUSTINVOICETRANSPART_ADDON.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_PIM_INVENTTABLEDELTA.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_PIM_INVENTTABLEDELTA.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_PIM_ITEMVIRTUALPATH.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_PIM_ITEMVIRTUALPATH.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERAPP_SALESTABLE.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERAPP_SALESTABLE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_BUSRELPRIVACYAGREEMENT.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_BUSRELPRIVACYAGREEMENT.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_COMMISSIONSALESGROUP.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_COMMISSIONSALESGROUP.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_COMMISSIONSALESREP.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_COMMISSIONSALESREP.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_CONTACTPERSON.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_CONTACTPERSON.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_CUSTINVOICEJOUR.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_CUSTINVOICEJOUR.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_CUSTINVOICEJOURPART_ADDON.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_CUSTINVOICEJOURPART_ADDON.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_CUSTINVOICESALESLINK.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_CUSTINVOICESALESLINK.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_CUSTINVOICETRANS.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_CUSTINVOICETRANS.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_CUSTPRIVACYAGREEMENT.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_CUSTPRIVACYAGREEMENT.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_CUSTTABLE.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_CUSTTABLE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_EMPLTABLE.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_EMPLTABLE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_INVENTTABLE.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_INVENTTABLE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_NVPROJECTQUOTE.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_NVPROJECTQUOTE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_NVPROJECTTABLE.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_NVPROJECTTABLE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_PROVISIONEXPECTED.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_PROVISIONEXPECTED.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_PROVISIONINVOICED.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_PROVISIONINVOICED.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_SALESLINE.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_SALESLINE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_SALESLINEMAINORDER.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_SALESLINEMAINORDER.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_SALESLINEMAINORDERSALESBQ.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_SALESLINEMAINORDERSALESBQ.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_SALESLINESUBORDER.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_SALESLINESUBORDER.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_SALESLINESUBORDERSALESBQ.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_SALESLINESUBORDERSALESBQ.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_SALESLINESUM.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_SALESLINESUM.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_SALESLINESUMPBA.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_SALESLINESUMPBA.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_SALESQUOTATIONLINE.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_SALESQUOTATIONLINE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_SALESQUOTATIONTABLE.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_SALESQUOTATIONTABLE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_SALESTABLE.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_SALESTABLE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_SALESTABLEMAINORDER.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_SALESTABLEMAINORDER.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_TCMSALESORDERPACKAGE.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_TCMSALESORDERPACKAGE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_VIEWS.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_VIEWS.sql</FullPath>
+        </FileNode>
+        <FileNode Name="FUNC_VLT_DB_GETDATETIMEWITHTIMEZONE.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>FUNC_VLT_DB_GETDATETIMEWITHTIMEZONE.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

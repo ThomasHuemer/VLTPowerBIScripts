@@ -1,0 +1,34 @@
+USE [VLT_AX500105_P]
+GO
+
+/****** Object:  View [dbo].[VLT_DB_POWERBI_SALESLINESUMPBA]    Script Date: 20.07.2018 13:18:04 ******/
+DROP VIEW [dbo].[VLT_DB_POWERBI_SALESLINESUMPBA]
+GO
+
+/****** Object:  View [dbo].[VLT_DB_POWERBI_SALESLINESUMPBA]    Script Date: 20.07.2018 13:18:04 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE VIEW [dbo].[VLT_DB_POWERBI_SALESLINESUMPBA]
+AS
+	SELECT SUM(SalesLine.SALESQTY) AS SUMQty,
+		   SUM(SalesLine.LINEAMOUNT) AS SUMLineAmount,
+		   SalesLine.ITEMID,
+		   SalesLine.SALESID,
+		   SalesLine.DATAAREAID,
+		   SalesLine.SALESID + SalesLine.DATAAREAID AS FKSalesTable
+	FROM dbo.SalesLine AS SalesLine
+	WHERE SalesLine.DATAAREAID = '100'
+		AND SalesLine.ITEMPBAID != ''
+	GROUP BY SalesLine.SALESID,
+			 SalesLine.ITEMID,
+			 SalesLine.DATAAREAID
+
+GO
+
+

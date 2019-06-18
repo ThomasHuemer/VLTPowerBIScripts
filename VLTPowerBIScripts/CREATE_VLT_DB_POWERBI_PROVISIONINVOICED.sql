@@ -1,0 +1,66 @@
+USE [VLT_AX500105_P]
+GO
+
+/****** Object:  View [dbo].[VLT_DB_POWERBI_PROVISIONINVOICED]    Script Date: 29.05.2018 15:52:39 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+IF EXISTS (
+		SELECT 1
+		FROM sys.VIEWS
+		WHERE NAME = 'VLT_DB_POWERBI_PROVISIONINVOICED'
+			AND type = 'V'
+	)
+	DROP VIEW VLT_DB_POWERBI_PROVISIONINVOICED;
+GO
+
+CREATE VIEW [dbo].[VLT_DB_POWERBI_PROVISIONINVOICED]
+AS
+	SELECT SalesTable.SALESID,
+		   SalesTable.SALESNAME,
+		   SalesTable.CUSTOMERREF,
+		   SalesTable.SALESGROUP,
+		   SalesTable.COMMISSIONGROUP,
+		   CASE
+			   WHEN SalesTable.COMMISSIONGROUP = '' THEN 1
+			   WHEN SalesTable.COMMISSIONGROUP IS NULL THEN 1
+			   ELSE ComCalcOne.COMMISSIONBASE
+		   END AS ComBaseGroupOne,
+		   ComCalcOne.COMMISSIONBASE AS CommissionBaseOne,
+		   SalesTable.NVSALESGROUP2,
+		   SalesTable.NVCOMMISSIONGROUP2,
+		   CASE
+			   WHEN (SalesTable.NvSalesGroup2 = '' AND SalesTable.NVCOMMISSIONGROUP2 = '') THEN 0
+			   WHEN (SalesTable.NvSalesGroup2 IS NULL AND SalesTable.NVCOMMISSIONGROUP2 IS NULL) THEN 0
+			   WHEN (SalesTable.NvSalesGroup2 <> '' AND SalesTable.NVCOMMISSIONGROUP2 = '') THEN 1
+			   WHEN (SalesTable.NvSalesGroup2 IS NOT NULL AND SalesTable.NVCOMMISSIONGROUP2 IS NULL) THEN 1
+			   ELSE ComCalcTwo.COMMISSIONBASE
+		   END AS ComBaseGroupTwo,
+		   ComCalcTwo.COMMISSIONBASE AS CommissionBaseTwo,
+		   SalesLink.INVOICEID,
+		   SalesLink.INVOICEDATE,
+		   CustInvoiceJour.SALESBALANCE,
+		   CustInvoiceJour.INVOICEAMOUNT,
+		   CustInvoiceJour.SUMTAXMST,
+		   1.0 AS ComBaseStdOne,
+		   1.0 AS ComBaseStdTwo,
+		   CommSalesGroup.GroupId AS SalesGroupAll,
+		   CommSalesGroup.GroupId + SalesTable.DATAAREAID AS FKSalesGroupAll,
+		   SalesTable.SalesGroup + SalesTable.DATAAREAID AS FKSalesGroup,
+		   SalesTable.NVSALESGROUP2 + SalesTable.DATAAREAID AS FKNvSalesGroup2
+	FROM VLT_AX500105_P.dbo.SalesTable AS SalesTable
+	LEFT JOIN dbo.COMMISSIONCUSTOMERGROUP AS ComCustGroupOne ON (ComCustGroupOne.DATAAREAID = SalesTable.DATAAREAID AND ComCustGroupOne.GROUPID = SalesTable.COMMISSIONGROUP)
+	LEFT JOIN COMMISSIONCALC AS ComCalcOne ON (ComCalcOne.DATAAREAID = ComCustGroupOne.DATAAREAID AND ComCalcOne.CUSTOMERRELATION = ComCustGroupOne.GROUPID AND ComCalcOne.CUSTOMERCODE = 1)
+	LEFT JOIN dbo.COMMISSIONCUSTOMERGROUP AS ComCustGroupTwo ON (ComCustGroupTwo.DATAAREAID = SalesTable.DATAAREAID AND ComCustGroupTwo.GROUPID = SalesTable.NVCOMMISSIONGROUP2)
+	LEFT JOIN COMMISSIONCALC AS ComCalcTwo ON (ComCalcTwo.DATAAREAID = ComCustGroupTwo.DATAAREAID AND ComCalcTwo.CUSTOMERRELATION = ComCustGroupTwo.GROUPID)
+	JOIN CUSTINVOICESALESLINK AS SalesLink ON (SalesLink.ORIGSALESID = SalesTable.SALESID)
+	JOIN CustInvoiceJour AS CustInvoiceJour ON (SalesLink.SALESID = CustInvoiceJour.SALESID AND SalesLink.INVOICEID = CustInvoiceJour.INVOICEID AND SalesLink.INVOICEDATE = CustInvoiceJour.INVOICEDATE)
+	JOIN COMMISSIONSALESGROUP AS CommSalesGroup ON (CommSalesGroup.DATAAREAID = SalesTable.DATAAREAID AND (CommSalesGroup.GROUPID = SalesTable.SALESGROUP OR CommSalesGroup.GROUPID = SalesTable.NVSALESGROUP2 OR SalesTable.NVSALESGROUP2 IS NULL))
+	WHERE SalesTable.DATAAREAID = '100'
+		AND SalesTable.SALESSTATUS = 3
+
+GO
+

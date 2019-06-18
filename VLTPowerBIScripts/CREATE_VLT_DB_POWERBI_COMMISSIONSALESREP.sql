@@ -1,0 +1,32 @@
+USE [VLT_AX500105_P]
+GO
+
+/****** Object:  View [dbo].[VLT_DB_PowerBI_CommissionSalesREP]    Script Date: 29.05.2018 15:51:19 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+IF EXISTS (
+		SELECT 1
+		FROM sys.views
+		WHERE NAME = 'VLT_DB_POWERBI_COMMISSIONSALESREP'
+			AND type = 'v'
+	)
+	DROP VIEW VLT_DB_POWERBI_COMMISSIONSALESREP;
+GO
+
+CREATE VIEW [dbo].[VLT_DB_POWERBI_COMMISSIONSALESREP]
+AS
+	SELECT CommSalesRep.GROUPID,
+		   CommSalesRep.EMPLID,
+		   CommSalesRep.NVLEADER,
+		   CommSalesRep.NVUSEGROUPRIGHTS,
+		   CommSalesRep.EMPLID + CommSalesRep.DATAAREAID AS FKEmplID,
+		   CommSalesRep.GROUPID + CommSalesRep.DATAAREAID AS FKGroupId
+	FROM dbo.COMMISSIONSALESREP AS CommSalesRep
+	WHERE CommSalesRep.DATAAREAID = '100'
+		AND CommSalesRep.NvLeader = 1
+GO
+
