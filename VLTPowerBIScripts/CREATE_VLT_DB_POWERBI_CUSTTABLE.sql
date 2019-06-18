@@ -51,7 +51,6 @@ AS
 		   CustTable.SalesGroup + CustTable.DATAAREAID AS FKSalesGroup,
 		   CustTable.ACCOUNTNUM + CustTable.DATAAREAID AS PKCustTable,
 		   CustTable.PARTYID + CustTable.DATAAREAID AS FKPartyId
-
 	FROM dbo.CUSTTABLE AS CustTable
 	LEFT JOIN dbo.PAYMTERM AS PaymTerm ON (CustTable.DATAAREAID = PaymTerm.DATAAREAID AND CustTable.PAYMTERMID = PaymTerm.PAYMTERMID)
 	LEFT JOIN dbo.CUSTPAYMMODETABLE AS PaymMode ON (CustTable.DATAAREAID = PaymMode.DATAAREAID AND CustTable.PAYMMODE = PaymMode.PAYMMODE)
