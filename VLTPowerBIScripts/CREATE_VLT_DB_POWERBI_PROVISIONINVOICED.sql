@@ -51,7 +51,7 @@ AS
 		   CommSalesGroup.GroupId + SalesTable.DATAAREAID AS FKSalesGroupAll,
 		   SalesTable.SalesGroup + SalesTable.DATAAREAID AS FKSalesGroup,
 		   SalesTable.NVSALESGROUP2 + SalesTable.DATAAREAID AS FKNvSalesGroup2
-	FROM VLT_AX500105_P.dbo.SalesTable AS SalesTable
+	FROM SalesTable AS SalesTable
 	LEFT JOIN dbo.COMMISSIONCUSTOMERGROUP AS ComCustGroupOne ON (ComCustGroupOne.DATAAREAID = SalesTable.DATAAREAID AND ComCustGroupOne.GROUPID = SalesTable.COMMISSIONGROUP)
 	LEFT JOIN COMMISSIONCALC AS ComCalcOne ON (ComCalcOne.DATAAREAID = ComCustGroupOne.DATAAREAID AND ComCalcOne.CUSTOMERRELATION = ComCustGroupOne.GROUPID AND ComCalcOne.CUSTOMERCODE = 1)
 	LEFT JOIN dbo.COMMISSIONCUSTOMERGROUP AS ComCustGroupTwo ON (ComCustGroupTwo.DATAAREAID = SalesTable.DATAAREAID AND ComCustGroupTwo.GROUPID = SalesTable.NVCOMMISSIONGROUP2)
