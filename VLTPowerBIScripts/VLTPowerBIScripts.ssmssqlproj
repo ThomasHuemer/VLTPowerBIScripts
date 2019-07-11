@@ -56,10 +56,22 @@
           <FullPath>CREATE_VLT_DB_POWERBI_COMMISSIONSALESGROUP.sql</FullPath>
         </FileNode>
         <FileNode Name="CREATE_VLT_DB_POWERBI_COMMISSIONSALESREP.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_POWERBI_COMMISSIONSALESREP.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_PowerBI_COMMISSIONSALESREPLEAD.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_PowerBI_COMMISSIONSALESREPLEAD.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_PowerBI_COMMISSIONSALESREPSUB.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_PowerBI_COMMISSIONSALESREPSUB.sql</FullPath>
         </FileNode>
         <FileNode Name="CREATE_VLT_DB_POWERBI_CONTACTPERSON.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
@@ -86,8 +98,8 @@
           <FullPath>CREATE_VLT_DB_POWERBI_CUSTINVOICESALESLINK.sql</FullPath>
         </FileNode>
         <FileNode Name="CREATE_VLT_DB_POWERBI_CUSTINVOICETRANS.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_POWERBI_CUSTINVOICETRANS.sql</FullPath>
         </FileNode>
@@ -104,8 +116,8 @@
           <FullPath>CREATE_VLT_DB_POWERBI_CUSTTABLE.sql</FullPath>
         </FileNode>
         <FileNode Name="CREATE_VLT_DB_POWERBI_EMPLTABLE.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_POWERBI_EMPLTABLE.sql</FullPath>
         </FileNode>
@@ -120,6 +132,18 @@
           <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_POWERBI_NVCOMPLAINTTABLE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_NVMONTAGETABLE.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_NVMONTAGETABLE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_NVMONTAGETRUPPTRANS.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_NVMONTAGETRUPPTRANS.sql</FullPath>
         </FileNode>
         <FileNode Name="CREATE_VLT_DB_POWERBI_NVPROJECTQUOTE.sql">
           <AssociatedConnectionMoniker />
