@@ -80,8 +80,8 @@
           <FullPath>CREATE_VLT_DB_POWERBI_CONTACTPERSON.sql</FullPath>
         </FileNode>
         <FileNode Name="CREATE_VLT_DB_POWERBI_CUSTINVOICEJOUR.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_POWERBI_CUSTINVOICEJOUR.sql</FullPath>
         </FileNode>
@@ -126,6 +126,12 @@
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_POWERBI_INVENTTABLE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_INVENTTRANS.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_INVENTTRANS.sql</FullPath>
         </FileNode>
         <FileNode Name="CREATE_VLT_DB_POWERBI_NVCOMPLAINTTABLE.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>

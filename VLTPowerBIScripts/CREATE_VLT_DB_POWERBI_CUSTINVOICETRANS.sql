@@ -58,6 +58,7 @@ AS
 	LEFT JOIN dbo.InventTable AS InventTable ON (CustInvoiceTrans.DATAAREAID = InventTable.DATAAREAID AND CustInvoiceTrans.ITEMID = InventTable.ITEMID)
 	WHERE CustInvoiceTrans.DATAAREAID = '100'
 		AND CustInvoiceTrans.SALESID != ''
+		AND CUSTINVOICETRANS.INVOICEDATE >  DATETIMEFROMPARTS(YEAR(GETDATE())-5, 3, 1, 0, 0, 0, 0)
 
 GO
 
