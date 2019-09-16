@@ -36,7 +36,7 @@ AS
 	LEFT JOIN dbo.InventTable AS InventTable ON (SalesLine.DATAAREAID = InventTable.DATAAREAID AND SalesLine.ITEMID = InventTable.ITEMID)
 	LEFT JOIN dbo.InventItemGroup AS InventItemGroup ON (InventTable.DATAAREAID = InventItemGroup.DATAAREAID AND InventTable.ITEMGROUPID = InventItemGroup.ITEMGROUPID)
 	WHERE SalesLine.DATAAREAID = '100'
-	AND SalesLine.CREATEDDATETIME > DATETIMEFROMPARTS(YEAR(GETDATE())-5, 3, 1, 0, 0, 0, 0)
+	AND SalesLine.CREATEDDATETIME > DATETIMEFROMPARTS(YEAR(GETDATE())-3, 1, 1, 0, 0, 0, 0)
 GO
 
 
