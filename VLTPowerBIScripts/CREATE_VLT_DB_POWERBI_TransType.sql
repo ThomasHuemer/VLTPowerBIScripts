@@ -1,7 +1,6 @@
 USE [VLT_AX500105_P]
 GO
-
-/****** Object:  View [dbo].[VLT_DB_POWERBI_TransType]    Script Date: 29.05.2018 15:52:39 ******/
+/****** Object:  View [dbo].[VLT_DB_PowerBI_EmplTable]    Script Date: 29.05.2018 15:51:53 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -14,10 +13,11 @@ IF EXISTS (
 		WHERE NAME = 'VLT_DB_POWERBI_TransType'
 			AND TYPE = 'V'
 	)
-	DROP VIEW [VLT_DB_POWERBI_TransType];
+	DROP VIEW VLT_DB_POWERBI_TransType;
 GO
 
-CREATE VIEW [DBO].[VLT_DB_POWERBI_TransType]
+
+CREATE VIEW [dbo].[VLT_DB_POWERBI_TransType]
 AS
 SELECT 0 AS TransTypeKey,'Auftrag' AS TransTypeDesc
 UNION SELECT 2 AS TransTypeKey,'Produktion' AS TransTypeDesc
@@ -42,3 +42,5 @@ UNION SELECT 23 AS TransTypeKey,'Ausschuss in Umlagerungsauftrag' AS TransTypeDe
 UNION SELECT 24 AS TransTypeKey,'Angebot' AS TransTypeDesc
 UNION SELECT 25 AS TransTypeKey,'Qualitätsprüfungsauftrag' AS TransTypeDesc
 GO
+
+

@@ -94,7 +94,8 @@ AS
 		   END AS ProdStatus,
 		   SALESTABLE.CURRENCYCODE,
 		   SALESTABLE.DATAAREAID,
-		   SALESPOOL.SALESPOOLID + ' (' + SALESPOOL.NAME + ')' AS Pool
+		   SALESPOOL.SALESPOOLID + ' (' + SALESPOOL.NAME + ')' AS Pool,
+		   SALESTABLE.NVINVOICINGBLOCKED
 	--(select stuff((select  ', ' + convert(varchar,FORMAT(sum(salesLine.SalesQty),'###,###,###.00','de-de')) + ' Stk. ' +SALESLINE.ITEMID from [dbo].[SALESLINE] 
 	--	where salesLine.SALESID = SalesTable.SALESID 
 	--	AND SalesLine.SalesQty != 0 
