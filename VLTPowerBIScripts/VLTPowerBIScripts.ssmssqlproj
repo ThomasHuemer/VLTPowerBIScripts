@@ -199,6 +199,12 @@
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_POWERBI_NVPROJECTTABLE.sql</FullPath>
         </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_PRICEDISCTABLE_SALES.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_PRICEDISCTABLE_SALES.sql</FullPath>
+        </FileNode>
         <FileNode Name="CREATE_VLT_DB_POWERBI_PROVISIONEXPECTED.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
