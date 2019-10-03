@@ -35,6 +35,7 @@ AS
 			   WHEN SalesQuotationTable.QUOTATIONSTATUS = 4 THEN 'Storniert'
 		   END AS QuotationStatusDesc,
 		   SalesQuotationTable.CREATEDDATETIME,
+		   SALESQUOTATIONTABLE.CUSTOMERREF	AS Kommission,
 		   SalesQuotationTable.QUOTATIONID + SalesQuotationTable.DATAAREAID AS FKQuotationId,
 		   SalesQuotationTable.SALESGROUP + SalesQuotationTable.DATAAREAID AS FKGroupId,
 		   SalesQuotationTable.CUSTACCOUNT + SalesQuotationTable.DATAAREAID AS FKCustAccount,
