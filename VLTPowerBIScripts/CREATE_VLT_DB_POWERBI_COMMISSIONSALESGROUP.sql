@@ -21,7 +21,9 @@ CREATE VIEW [dbo].[VLT_DB_POWERBI_COMMISSIONSALESGROUP]
 AS
 	SELECT Salesgroup.GROUPID,
 		   Salesgroup.Name,
-		   Salesgroup.GROUPID + SalesGroup.DATAAREAID AS FKGroupId
+		   SalesGroup.VLT_SALESAREAID AS SalesArea,
+		   Salesgroup.GROUPID + SalesGroup.DATAAREAID AS FKGroupId,
+		   SalesGroup.VLT_SALESAREAID + Salesgroup.DATAAREAID AS FKSalesArea
 	FROM dbo.COMMISSIONSALESGROUP AS Salesgroup
 	WHERE Salesgroup.DATAAREAID = '100'
 		AND Salesgroup.VLT_SALESGROUPTERMINATED = 0
