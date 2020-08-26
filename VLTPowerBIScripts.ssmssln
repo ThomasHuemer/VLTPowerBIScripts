@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# SQL Server Management Studio Solution File, Format Version 14.00
-VisualStudioVersion = 14.0.23107.0
+# SQL Server Management Studio Solution File, Format Version 18.00
+VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "VLTPowerBIScripts", "VLTPowerBIScripts\VLTPowerBIScripts.ssmssqlproj", "{AA0642EE-B273-4FDB-B6DC-52394A02EC79}"
 EndProject
@@ -11,9 +11,12 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{AA0642EE-B273-4FDB-B6DC-52394A02EC79}.Default|Default.ActiveCfg = Default
-		{3728F4ED-5F14-43BE-A2F1-42CBE483B78F}.Default|Default.ActiveCfg = Default
+		{CF5C4C3D-DE81-4A92-915F-7BA731D2B1A7}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEC5E6E9-B838-43B6-B7C0-48E96CCDCF97}
 	EndGlobalSection
 EndGlobal
