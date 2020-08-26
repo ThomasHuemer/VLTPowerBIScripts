@@ -25,6 +25,12 @@
           <AssociatedConnUserName />
           <FullPath>CREATE_ VLT_DB_POWERBI_CUSTINVOICETRANSPART_ADDON.sql</FullPath>
         </FileNode>
+        <FileNode Name="CREATE_VLT_DB_NvPRODPOOLWeek.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_NvPRODPOOLWeek.sql</FullPath>
+        </FileNode>
         <FileNode Name="CREATE_VLT_DB_PIM_INVENTTABLEDELTA.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
@@ -247,6 +253,12 @@
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_POWERBI_NVMONTAGETRUPPTRANS.sql</FullPath>
         </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_NvProdPoolWeek.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_NvProdPoolWeek.sql</FullPath>
+        </FileNode>
         <FileNode Name="CREATE_VLT_DB_POWERBI_NVPROJECTQUOTE.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
@@ -264,6 +276,12 @@
           <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_POWERBI_PRICEDISCTABLE_SALES.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_ProdPoolCapacity.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_ProdPoolCapacity.sql</FullPath>
         </FileNode>
         <FileNode Name="CREATE_VLT_DB_POWERBI_PROVISIONEXPECTED.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
@@ -367,9 +385,21 @@
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_POWERBI_VIEWS.sql</FullPath>
         </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_VLT_ProdCapacityLog.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_VLT_ProdCapacityLog.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_PRODPOOL.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_PRODPOOL.sql</FullPath>
+        </FileNode>
         <FileNode Name="FUNC_VLT_DB_GETDATETIMEWITHTIMEZONE.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>FUNC_VLT_DB_GETDATETIMEWITHTIMEZONE.sql</FullPath>
         </FileNode>

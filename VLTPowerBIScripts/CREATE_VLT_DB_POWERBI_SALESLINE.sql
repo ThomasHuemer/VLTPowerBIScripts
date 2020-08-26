@@ -30,8 +30,10 @@ AS
 		   InventTable.ITEMGROUPID,
 		   InventItemGroup.NAME ItemGroupName,
 		   SalesLine.SALESBOQID,
+		   SalesLine.lineNum,
 		   SalesLine.SALESID + SalesLine.DATAAREAID AS FKSalesTable,
-		   SALESLINE.ITEMID + SalesLine.DATAAREAID AS FKInventTable
+		   SALESLINE.ITEMID + SalesLine.DATAAREAID AS FKInventTable,
+		   SalesLine.RECID	AS FKRecId
 	FROM dbo.SalesLine AS SalesLine
 	LEFT JOIN dbo.InventTable AS InventTable ON (SalesLine.DATAAREAID = InventTable.DATAAREAID AND SalesLine.ITEMID = InventTable.ITEMID)
 	LEFT JOIN dbo.InventItemGroup AS InventItemGroup ON (InventTable.DATAAREAID = InventItemGroup.DATAAREAID AND InventTable.ITEMGROUPID = InventItemGroup.ITEMGROUPID)

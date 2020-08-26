@@ -1,0 +1,35 @@
+USE [VLT_AX500105_P]
+GO
+
+/****** Object:  View [dbo].[VLT_DB_POWERBI_NvProdPoolWeek]    Script Date: 26.08.2020 00:43:17 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+IF EXISTS (
+		SELECT
+			1
+		FROM sys.views
+		WHERE NAME = 'VLT_DB_POWERBI_NvProdPoolWeek'
+			AND TYPE = 'V'
+	)
+	DROP VIEW VLT_DB_POWERBI_NvProdPoolWeek;
+GO
+
+CREATE VIEW [dbo].[VLT_DB_POWERBI_NvProdPoolWeek]
+AS
+
+	SELECT ppw.PRODPOOLID,
+	ppw.PRODWEEKCAPACITY,
+	ppw.WEEKSTARTING,
+	DATEPART(WEEK, ppw.WEEKSTARTING) AS Weeknumber,
+	DATEPART(Year, ppw.WEEKSTARTING) AS YearStart,
+	DATEPART(Month, ppw.WEEKSTARTING) AS MonthStart,
+	ppw.PRODPOOLID+CONVERT(varchar(10),DATEPART(Year, ppw.WEEKSTARTING)*100) + CONVERT(varchar(10),DATEPART(WEEK, ppw.WEEKSTARTING) )FKYearWeek
+	FROM
+	dbo.NvProdPoolWeek ppw
+	WHERE ppw.DATAAREAID	= '100'
+GO
+
+
