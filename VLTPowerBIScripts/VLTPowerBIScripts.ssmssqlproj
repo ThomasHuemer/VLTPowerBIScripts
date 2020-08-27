@@ -409,6 +409,12 @@
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_PRODPOOL.sql</FullPath>
         </FileNode>
+        <FileNode Name="CREATE_VLT_POWERBI_TCMMainSalesOrderCapacity.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_POWERBI_TCMMainSalesOrderCapacity.sql</FullPath>
+        </FileNode>
         <FileNode Name="FUNC_VLT_DB_GETDATETIMEWITHTIMEZONE.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>

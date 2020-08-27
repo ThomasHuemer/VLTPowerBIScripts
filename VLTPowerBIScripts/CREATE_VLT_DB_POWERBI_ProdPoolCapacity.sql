@@ -23,14 +23,17 @@ AS
 	SELECT
 		it.PRODPOOLID																																		  AS ProdPool,
 		SUM(sl.SALESQTY)																																	  AS Quantity,
+		--msoc.QtyMainOrder																																	AS MainSalesOrderQty,
 		--sl.SHIPPINGDATECONFIRMED AS DELIVERYDATE,
 		DATEPART(WEEK, sl.SHIPPINGDATECONFIRMED)																											  AS DeliveryWeek,
 		ppw.PRODWEEKCAPACITY																																  AS CapacityPerWeek,
+		(SELECT QtyMainOrder FROM VLT_DB_POWERBI_TCMMainSalesOrderCapacity msoc where msoc.prodpoolid = it.prodpoolid AND msoc.weekplanned = 	DATEPART(WEEK, sl.SHIPPINGDATECONFIRMED)	) AS MainOrderQty,	
 		it.PRODPOOLID + CONVERT(VARCHAR(10), DATEPART(YEAR, sl.SHIPPINGDATECONFIRMED) * 100) + CONVERT(VARCHAR(10), DATEPART(WEEK, sl.SHIPPINGDATECONFIRMED)) AS FKYearWeek
 	FROM SALESLINE sl
 	JOIN INVENTTABLE it ON (sl.ITEMID = it.ITEMID AND sl.DATAAREAID = it.DATAAREAID)
 	JOIN SALESTABLE st ON (sl.SALESID = st.SALESID AND it.DATAAREAID = st.DATAAREAID)
 	LEFT JOIN VLT_DB_POWERBI_NvProdPoolWeek ppw ON (it.PRODPOOLID = ppw.PRODPOOLID AND ppw.Weeknumber = DATEPART(WEEK, sl.SHIPPINGDATECONFIRMED) AND ppw.YearStart = DATEPART(YEAR, sl.SHIPPINGDATECONFIRMED))
+	
 	WHERE sl.DATAAREAID = '100'
 		AND DATEPART(YEAR, sl.SHIPPINGDATECONFIRMED) = DATEPART(YEAR, GETDATE())
 		AND st.SALESSTATUS < 2
