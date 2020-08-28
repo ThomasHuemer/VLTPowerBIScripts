@@ -1,0 +1,10 @@
+use VLT_AX500105_P
+go
+
+SELECT pl.purchid, pl.ITEMID FROM PURCHLINE pl
+WHERE pl.itemid in (
+SELECT ITEMID FROM INVENTTABLEMODULE itm
+WHERE  itm.MODIFIEDBY = 'Madi' group by itm.itemid)
+AND pl.VENDACCOUNT = '30003'
+AND pl.CREATEDDATETIME	>= DATETIMEFROMPARTS(2020, 1, 1, 0, 0, 0, 0)
+group by purchId, pl.itemid
