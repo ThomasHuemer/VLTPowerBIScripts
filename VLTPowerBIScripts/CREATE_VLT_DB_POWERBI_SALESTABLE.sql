@@ -96,7 +96,20 @@ AS
 		   SALESTABLE.CURRENCYCODE,
 		   SALESTABLE.DATAAREAID,
 		   SALESPOOL.SALESPOOLID + ' (' + SALESPOOL.NAME + ')' AS Pool,
-		   SALESTABLE.NVINVOICINGBLOCKED
+		   SALESTABLE.NVINVOICINGBLOCKED,
+		   SALESTABLE.SALESTYPE,
+		   CASE
+			   WHEN SALESTABLE.SALESTYPE = 0 THEN 'Journal'
+			   WHEN SALESTABLE.SALESTYPE = 1 THEN 'Angebot'
+			   WHEN SALESTABLE.SALESTYPE = 2 THEN 'Dauerauftrag'
+			   WHEN SALESTABLE.SALESTYPE = 3 THEN 'Auftrag'
+			   WHEN SALESTABLE.SALESTYPE = 4 THEN 'Zurückgegebener'
+			   WHEN SALESTABLE.SALESTYPE = 5 THEN 'Abruf'
+			   WHEN SALESTABLE.SALESTYPE = 6 THEN 'Artikelbedarf'
+		   END AS SalesTypeDesc,
+		   DATEPART(WEEK, SALESTABLE.SHIPPINGDATECONFIRMED)	AS DeliveryWeek,
+		   DATEPART(Year, SALESTABLE.SHIPPINGDATECONFIRMED)	AS DeliveryYear,
+		   salestable.SALESTAKER	
 	--(select stuff((select  ', ' + convert(varchar,FORMAT(sum(salesLine.SalesQty),'###,###,###.00','de-de')) + ' Stk. ' +SALESLINE.ITEMID from [dbo].[SALESLINE] 
 	--	where salesLine.SALESID = SalesTable.SALESID 
 	--	AND SalesLine.SalesQty != 0 

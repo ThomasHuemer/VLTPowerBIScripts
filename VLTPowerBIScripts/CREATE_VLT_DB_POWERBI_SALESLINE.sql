@@ -28,6 +28,7 @@ AS
 		   SalesLine.ITEMID,
 		   SalesLine.NAME,
 		   InventTable.ITEMGROUPID,
+		   InventTable.ITEMTYPE,
 		   InventItemGroup.NAME ItemGroupName,
 		   SalesLine.SALESBOQID,
 		   SalesLine.lineNum,

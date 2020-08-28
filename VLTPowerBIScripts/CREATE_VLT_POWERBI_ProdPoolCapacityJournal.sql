@@ -11,53 +11,40 @@ IF EXISTS (
 		SELECT
 			1
 		FROM sys.views
-		WHERE NAME = 'VLT_DB_POWERBI_ProdPoolCapacity'
+		WHERE NAME = 'VLT_DB_POWERBI_ProdPoolCapacityJournal'
 			AND type = 'V'
 	)
-	DROP VIEW VLT_DB_POWERBI_ProdPoolCapacity;
+	DROP VIEW VLT_DB_POWERBI_ProdPoolCapacityJournal;
 GO
 
-CREATE VIEW [dbo].VLT_DB_POWERBI_ProdPoolCapacity
+CREATE VIEW [dbo].VLT_DB_POWERBI_ProdPoolCapacityJournal
 AS
 
 	SELECT
-		it.PRODPOOLID																																		  AS ProdPool,		
+		it.PRODPOOLID																																		  AS ProdPool,
+		SUM(sl.SALESQTY)																																	  AS Quantity,
 		--msoc.QtyMainOrder																																	AS MainSalesOrderQty,
 		--sl.SHIPPINGDATECONFIRMED AS DELIVERYDATE,
 		DATEPART(WEEK, sl.SHIPPINGDATECONFIRMED)																											  AS DeliveryWeek,
 		ppw.PRODWEEKCAPACITY																																  AS CapacityPerWeek,
-		(
-			SELECT
-				QtyMainOrder
-			FROM VLT_DB_POWERBI_TCMMainSalesOrderCapacity msoc
-			WHERE msoc.PRODPOOLID = it.PRODPOOLID
-				AND msoc.WeekPlanned = DATEPART(WEEK, sl.SHIPPINGDATECONFIRMED)
-		)																																					  AS MainOrderQty,
-		it.PRODPOOLID + CONVERT(VARCHAR(10), DATEPART(YEAR, sl.SHIPPINGDATECONFIRMED) * 100) + CONVERT(VARCHAR(10), DATEPART(WEEK, sl.SHIPPINGDATECONFIRMED)) AS FKYearWeek,
-		ppcj.Quantity																																		  AS JournalQty,
-		SUM(sl.SALESQTY)																																	  AS SalesOrderQTY,
-		CASE 
-			WHEN ppcj.Quantity != 0  THEN SUM(sl.SALESQTY) + ppcj.Quantity
-			WHEN ppcj.Quantity IS NULL OR  ppcj.Quantity = 0 THEN SUM(sl.SALESQTY)
-		END AS Quantity
-
+		(SELECT QtyMainOrder FROM VLT_DB_POWERBI_TCMMainSalesOrderCapacity msoc where msoc.prodpoolid = it.prodpoolid AND msoc.weekplanned = 	DATEPART(WEEK, sl.SHIPPINGDATECONFIRMED)	) AS MainOrderQty,	
+		it.PRODPOOLID + CONVERT(VARCHAR(10), DATEPART(YEAR, sl.SHIPPINGDATECONFIRMED) * 100) + CONVERT(VARCHAR(10), DATEPART(WEEK, sl.SHIPPINGDATECONFIRMED)) AS FKYearWeek
 	FROM SALESLINE sl
 	JOIN INVENTTABLE it ON (sl.ITEMID = it.ITEMID AND sl.DATAAREAID = it.DATAAREAID)
 	JOIN SALESTABLE st ON (sl.SALESID = st.SALESID AND it.DATAAREAID = st.DATAAREAID)
 	LEFT JOIN VLT_DB_POWERBI_NvProdPoolWeek ppw ON (it.PRODPOOLID = ppw.PRODPOOLID AND ppw.Weeknumber = DATEPART(WEEK, sl.SHIPPINGDATECONFIRMED) AND ppw.YearStart = DATEPART(YEAR, sl.SHIPPINGDATECONFIRMED))
-	LEFT JOIN VLT_DB_POWERBI_ProdPoolCapacityJournal ppcj ON (ppcj.DeliveryWeek = DATEPART(WEEK, sl.SHIPPINGDATECONFIRMED) AND ppcj.ProdPool = it.PRODPOOLID)
+	
 	WHERE sl.DATAAREAID = '100'
 		AND DATEPART(YEAR, sl.SHIPPINGDATECONFIRMED) = DATEPART(YEAR, GETDATE())
 		AND st.SALESSTATUS < 2
 		AND st.VLT_SALESORDERPRODREGSTATUS != 2
 		AND st.MAINSALESORDER_ADDON = 0
-		AND st.SALESTYPE != 0
+		AND st.SALESTYPE = 0
 		AND it.ITEMTYPE = 1
 	GROUP BY it.PRODPOOLID,
 			 DATEPART(WEEK, sl.SHIPPINGDATECONFIRMED),
 			 DATEPART(YEAR, sl.SHIPPINGDATECONFIRMED),
-			 ppw.PRODWEEKCAPACITY,
-			 ppcj.Quantity
+			 ppw.PRODWEEKCAPACITY
 GO
 
 
