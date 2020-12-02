@@ -23,6 +23,7 @@ AS
 		ProdCapacityLogTable.USERID,
 		ProdCapacityLogTable.SALESID,
 		ProdCapacityLogTable.ITEMID,
+		i.PRODPOOLID,
 		ProdCapacityLogTable.CREATEDDATETIME,
 		dbo.VLT_DB_GETDATETIMEWITHTIMEZONE(ProdCapacityLogTable.CREATEDDATETIME) AS 'ErstelldatumLog',
 		ProdCapacityLogTable.ERRORTXT,
@@ -34,6 +35,7 @@ AS
 	FROM dbo.VLT_PRODCAPACITYLOG AS ProdCapacityLogTable
 	LEFT JOIN SysCompanyUserInfo scui ON (scui.USERID	= ProdCapacityLogTable.USERID AND scui.DATAAREAID	= ProdCapacityLogTable.DATAAREAID)
 	LEFT JOIN EMPLTABLE e	ON(e.EMPLID	= scui.EMPLID AND e.DATAAREAID	= scui.DATAAREAID)
+	LEFT JOIN INVENTTABLE i ON (i.ITEMID	= ProdCapacityLogTable.ITEMID)
 	JOIN [dbo].[DIRPARTYTABLE] AS DirPartyTable ON (e.DataAreaID = DirPartyTable.DataAreaId AND e.PartyId = DirPartyTable.PartyId)
 	
 GO
