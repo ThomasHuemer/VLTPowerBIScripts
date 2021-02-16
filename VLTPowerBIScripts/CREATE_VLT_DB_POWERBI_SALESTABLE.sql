@@ -107,7 +107,7 @@ AS
 			   WHEN SALESTABLE.SALESTYPE = 5 THEN 'Abruf'
 			   WHEN SALESTABLE.SALESTYPE = 6 THEN 'Artikelbedarf'
 		   END AS SalesTypeDesc,
-		   DATEPART(WEEK, SALESTABLE.SHIPPINGDATECONFIRMED)	AS DeliveryWeek,
+		   DATEPART(ISO_WEEK, SALESTABLE.SHIPPINGDATECONFIRMED)	AS DeliveryWeek,
 		   DATEPART(Year, SALESTABLE.SHIPPINGDATECONFIRMED)	AS DeliveryYear,
 		   salestable.SALESTAKER	
 	--(select stuff((select  ', ' + convert(varchar,FORMAT(sum(salesLine.SalesQty),'###,###,###.00','de-de')) + ' Stk. ' +SALESLINE.ITEMID from [dbo].[SALESLINE] 

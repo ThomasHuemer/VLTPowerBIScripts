@@ -11,13 +11,13 @@ IF EXISTS (
 		SELECT
 			1
 		FROM sys.views
-		WHERE NAME = 'VLT_DB_POWERBI_ProdPoolCapacity'
+		WHERE NAME = 'VLT_DB_POWERBI_ProdPoolCapacitySalesID'
 			AND type = 'V'
 	)
-	DROP VIEW VLT_DB_POWERBI_ProdPoolCapacity;
+	DROP VIEW VLT_DB_POWERBI_ProdPoolCapacitySalesId;
 GO
 
-CREATE VIEW [dbo].VLT_DB_POWERBI_ProdPoolCapacity
+CREATE VIEW [dbo].VLT_DB_POWERBI_ProdPoolCapacitySalesID
 AS
 
 	SELECT
@@ -39,7 +39,8 @@ AS
 		CASE
 			WHEN ppcj.Quantity != 0 THEN SUM(sl.SALESQTY) + ppcj.Quantity
 			WHEN ppcj.Quantity IS NULL OR ppcj.Quantity = 0 THEN SUM(sl.SALESQTY)
-		END																																					  AS Quantity
+		END																																					  AS Quantity,
+		st.SALESID																																			  AS SalesIdProdCapa
 		
 
 	FROM SALESLINE sl
@@ -58,6 +59,7 @@ AS
 			 DATEPART(ISO_WEEK, sl.SHIPPINGDATECONFIRMED),
 			 DATEPART(YEAR, sl.SHIPPINGDATECONFIRMED),
 			 ppw.PRODWEEKCAPACITY,
-			 ppcj.Quantity
+			 ppcj.Quantity,
+			 st.SALESID
 
 

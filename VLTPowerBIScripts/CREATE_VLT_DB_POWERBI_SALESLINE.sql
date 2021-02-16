@@ -34,7 +34,12 @@ AS
 		   SalesLine.lineNum,
 		   SalesLine.SALESID + SalesLine.DATAAREAID AS FKSalesTable,
 		   SALESLINE.ITEMID + SalesLine.DATAAREAID AS FKInventTable,
-		   SalesLine.RECID	AS FKRecId
+		   InventTable.PRODPOOLID	AS PRODPOOL,
+		   SalesLine.RECID	AS FKRecId,
+		   DATEPART(ISO_WEEK, SalesLine.SHIPPINGDATECONFIRMED)	AS DeliveryWeek,
+		   DATEPART(Year, SalesLine.SHIPPINGDATECONFIRMED)	AS DeliveryYear,
+		   dbo.VLT_DB_GETDATETIMEWITHTIMEZONE(SalesLine.SHIPPINGDATECONFIRMED) AS 'Lieferdatum',
+		   CONVERT(VARCHAR(10), DATEPART(YEAR, SalesLine.SHIPPINGDATECONFIRMED) * 100) + CONVERT(VARCHAR(10), DATEPART(ISO_WEEK, SalesLine.SHIPPINGDATECONFIRMED)) AS FKYearWeek
 	FROM dbo.SalesLine AS SalesLine
 	LEFT JOIN dbo.InventTable AS InventTable ON (SalesLine.DATAAREAID = InventTable.DATAAREAID AND SalesLine.ITEMID = InventTable.ITEMID)
 	LEFT JOIN dbo.InventItemGroup AS InventItemGroup ON (InventTable.DATAAREAID = InventItemGroup.DATAAREAID AND InventTable.ITEMGROUPID = InventItemGroup.ITEMGROUPID)
