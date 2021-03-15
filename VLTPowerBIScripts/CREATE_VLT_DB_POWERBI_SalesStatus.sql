@@ -1,0 +1,46 @@
+USE [VLT_AX500105_P]
+GO
+
+/****** Object:  View [dbo].[VLT_DB_PowerBI_EmplTable]    Script Date: 29.05.2018 15:51:53 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+IF EXISTS (
+		SELECT
+			1
+		FROM sys.VIEWS
+		WHERE NAME = 'VLT_DB_POWERBI_SalesStatus'
+			AND type = 'V'
+	)
+	DROP VIEW VLT_DB_POWERBI_SalesStatus;
+GO
+
+
+CREATE VIEW [dbo].[VLT_DB_POWERBI_SalesStatus]
+AS
+
+	SELECT
+		0	   AS SALESSTATUS,
+		'Kein' AS SALESSTATUSDesc
+	UNION
+	SELECT
+		1				  AS SALESSTATUS,
+		'Offener Auftrag' AS SALESSTATUSDesc
+	UNION
+	SELECT
+		2			AS SALESSTATUS,
+		'Geliefert' AS SALESSTATUSDesc
+	UNION
+	SELECT
+		3			 AS SALESSTATUS,
+		'Fakturiert' AS SALESSTATUSDesc
+	UNION
+	SELECT
+		4			AS SALESSTATUS,
+		'Storniert' AS SALESSTATUSDesc
+GO
+
+

@@ -109,7 +109,8 @@ AS
 		   END AS SalesTypeDesc,
 		   DATEPART(ISO_WEEK, SALESTABLE.SHIPPINGDATECONFIRMED)	AS DeliveryWeek,
 		   DATEPART(Year, SALESTABLE.SHIPPINGDATECONFIRMED)	AS DeliveryYear,
-		   salestable.SALESTAKER	
+		   salestable.SALESTAKER,
+		   salesTable.NVCOMPANYID AS 'Firmenkennung'
 	--(select stuff((select  ', ' + convert(varchar,FORMAT(sum(salesLine.SalesQty),'###,###,###.00','de-de')) + ' Stk. ' +SALESLINE.ITEMID from [dbo].[SALESLINE] 
 	--	where salesLine.SALESID = SalesTable.SALESID 
 	--	AND SalesLine.SalesQty != 0 

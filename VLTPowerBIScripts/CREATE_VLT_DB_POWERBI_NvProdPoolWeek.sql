@@ -7,12 +7,13 @@ GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 IF EXISTS (
 		SELECT
 			1
 		FROM sys.views
 		WHERE NAME = 'VLT_DB_POWERBI_NvProdPoolWeek'
-			AND TYPE = 'V'
+			AND type = 'V'
 	)
 	DROP VIEW VLT_DB_POWERBI_NvProdPoolWeek;
 GO
@@ -20,16 +21,19 @@ GO
 CREATE VIEW [dbo].[VLT_DB_POWERBI_NvProdPoolWeek]
 AS
 
-	SELECT ppw.PRODPOOLID,
-	ppw.PRODWEEKCAPACITY,
-	ppw.WEEKSTARTING,
-	DATEPART(WEEK, ppw.WEEKSTARTING) AS Weeknumber,
-	DATEPART(Year, ppw.WEEKSTARTING) AS YearStart,
-	DATEPART(Month, ppw.WEEKSTARTING) AS MonthStart,
-	ppw.PRODPOOLID+CONVERT(varchar(10),DATEPART(Year, ppw.WEEKSTARTING)*100) + CONVERT(varchar(10),DATEPART(WEEK, ppw.WEEKSTARTING) )FKYearWeek
-	FROM
-	dbo.NvProdPoolWeek ppw
-	WHERE ppw.DATAAREAID	= '100'
+	SELECT
+		ppw.PRODPOOLID,
+		ppw.PRODWEEKCAPACITY																													   
+		AS PRODWEEKCAPACITY,
+		CONVERT(DATE, dbo.VLT_DB_GETDATETIMEWITHTIMEZONE(ppw.WEEKSTARTINg)) AS WEEKSTARTING,
+		DATEPART(ISO_WEEK, ppw.WEEKSTARTING)																										   AS Weeknumber,
+		DATEPART(YEAR, ppw.WEEKSTARTING)																										   AS YearStart,
+		DATEPART(MONTH, ppw.WEEKSTARTING)																										   AS MonthStart,
+		CONVERT(VARCHAR(4), DATEPART(YEAR, ppw.WEEKSTARTING)) + (select right('00' + cast(DATEPART(ISO_WEEK, ppw.WEEKSTARTING) as varchar(2)), 2))  AS FKYearWeek,
+		ppw.PRODPOOLID + CONVERT(VARCHAR(4), DATEPART(YEAR, ppw.WEEKSTARTING)) + (select right('00' + cast(DATEPART(ISO_WEEK, ppw.WEEKSTARTING) as varchar(2)), 2))  AS FKPoolYearWeek
+	FROM dbo.NVPRODPOOLWEEK ppw
+	WHERE ppw.DATAAREAID = '100'
+
 GO
 
 
