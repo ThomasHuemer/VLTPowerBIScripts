@@ -32,8 +32,8 @@
           <FullPath>CREATE_VLT_DB_PIM_INVENTTABLEDELTA.sql</FullPath>
         </FileNode>
         <FileNode Name="CREATE_VLT_DB_PIM_ITEMVIRTUALPATH.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_PIM_ITEMVIRTUALPATH.sql</FullPath>
         </FileNode>
@@ -313,6 +313,18 @@
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_POWERBI_ProdRegStatus.sql</FullPath>
         </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_ProdStatus.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_ProdStatus.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_POWERBI_PRODTABLE.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_POWERBI_PRODTABLE.sql</FullPath>
+        </FileNode>
         <FileNode Name="CREATE_VLT_DB_POWERBI_PROVISIONEXPECTED.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
@@ -456,6 +468,24 @@
           <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_PRODPOOL.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_WINDREAM_COUNT_INVOICES_NOTSENT.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_WINDREAM_COUNT_INVOICES_NOTSENT.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_WINDREAM_COUNT_INVOICES_SENT.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_WINDREAM_COUNT_INVOICES_SENT.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CREATE_VLT_DB_WINDREAM_INVOICES.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_WINDREAM_INVOICES.sql</FullPath>
         </FileNode>
         <FileNode Name="CREATE_VLT_POWERBI_TCMMainSalesOrderCapacity.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
