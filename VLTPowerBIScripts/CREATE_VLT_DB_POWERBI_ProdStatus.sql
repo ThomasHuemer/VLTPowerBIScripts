@@ -47,7 +47,7 @@ AS
 		'Als fertig gemeldet' AS ProdSTATUSDesc
 	UNION
 	SELECT
-		6	   AS ProdSTATUS,
+		7	   AS ProdSTATUS,
 		'Abgeschlossen' AS ProdSTATUSDesc
 GO
 
