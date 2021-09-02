@@ -487,6 +487,12 @@
           <AssociatedConnUserName />
           <FullPath>CREATE_VLT_DB_WINDREAM_INVOICES.sql</FullPath>
         </FileNode>
+        <FileNode Name="CREATE_VLT_DB_WINDREAM_INVOICES_NOT_IN_WD.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CREATE_VLT_DB_WINDREAM_INVOICES_NOT_IN_WD.sql</FullPath>
+        </FileNode>
         <FileNode Name="CREATE_VLT_POWERBI_TCMMainSalesOrderCapacity.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vmvalsql01:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>vmvalsql01</AssociatedConnSrvName>
